@@ -1,0 +1,7 @@
+<div id="gallery" class="gallery-container">
+  <!-- photo.size[5] maps to the default image dimensions in the sizes array -->
+  <div class="image-container" ng-repeat-start="photo in photos track by $index" ng-repeat-end
+        data-image-width="{{photo.sizes[5].width}}" data-image-height="{{photo.sizes[5].height}}">
+    <img ng-src="{{photo.urlDefault}}" ng-click="viewPhoto(photo)" />
+  </div>
+</div>

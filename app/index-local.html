@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="photoStream">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>NASA Flickr Stream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body ng-controller="PhotoStreamCtrl">
+  <nav class="container-fluid navbar navbar-dark navbar-inverse row">
+    <a class="navbar-brand col-xs-3">
+      NASA<span class="hidden-sm hidden-xs"> Flickr Stream</span>
+    </a>
+    <div class="text-right col-xs-offset-4 col-xs-6">
+      <span class="sort-label hidden-sm hidden-xs">sort by: </span>
+      <div class="btn-group" uib-dropdown>
+        <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle>
+          {{selectedSortType}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu>
+          <li role="menuitem">
+            <a href="" ng-click="sortPhotos(sortTypes.UPLOAD_DATE)">Upload Date</a>
+          </li>
+          <li role="menuitem">
+            <a href="" ng-click="sortPhotos(sortTypes.VIEWS)">Views</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <photo-gallery photos-promise="photosPromise"
+                 load-more-fn="loadMore()"
+                 selected-sort="{{selectedSortType}}"></photo-gallery>
+
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

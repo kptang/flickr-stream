@@ -1,0 +1,44 @@
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+.navbar {
+  display: flex;
+  align-items: center;
+
+  .sort-label {
+    color: white;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+    font-variant: small-caps;
+  }
+}
+
+#gallery {
+  overflow: hidden;
+
+  .image-container {
+    border: 1px solid lightgray;
+    box-sizing: content-box;
+    float: left;
+    margin: 5px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      display: block;
+      height: 100%;
+      width: auto;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.modal-content {
+  img {
+    height: auto;
+    width: 100%;
+    padding: 10px;
+  }
+}

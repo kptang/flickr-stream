@@ -8,4 +8,4 @@ To run project locally:
 This should open a browser window that points to `http://localhost:3000`, which should run the app
 
 To see the project running externally, you can visit this github page:
-http://kptang.github.io/flickrStream
+http://kptang.github.io/flickr-stream
